@@ -6,6 +6,7 @@ if not exist "C:\myesmp\mysql\data\mysql" (
     echo Initializing MySQL database...
     "C:\myesmp\mysql\bin\mysqld.exe" --initialize-insecure --basedir="C:\myesmp\mysql" --datadir="C:\myesmp\mysql\data"
     echo MySQL initialized.
+    timeout /t 5 >nul
 )
 
 :: Start MySQL

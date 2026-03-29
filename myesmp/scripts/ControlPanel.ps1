@@ -37,21 +37,21 @@ $btnStart = New-Object Windows.Forms.Button
 $btnStart.Text = "Start"
 $btnStart.Location = New-Object Drawing.Point(15, 60)
 $btnStart.Size = New-Object Drawing.Size(70, 25)
-$btnStart.Add_Click({ Start-Process (Join-Path $scriptsPath "start.bat") -WorkingDirectory $scriptsPath -WindowStyle Hidden })
+$btnStart.Add_Click({ Start-Process (Join-Path $scriptsPath "start.bat") -WorkingDirectory $scriptsPath -WindowStyle Hidden -CreateNoWindow })
 $grpServer.Controls.Add($btnStart)
 
 $btnStop = New-Object Windows.Forms.Button
 $btnStop.Text = "Stop"
 $btnStop.Location = New-Object Drawing.Point(90, 60)
 $btnStop.Size = New-Object Drawing.Size(70, 25)
-$btnStop.Add_Click({ Start-Process (Join-Path $scriptsPath "stop.bat") -WorkingDirectory $scriptsPath -WindowStyle Hidden })
+$btnStop.Add_Click({ Start-Process (Join-Path $scriptsPath "stop.bat") -WorkingDirectory $scriptsPath -WindowStyle Hidden -CreateNoWindow })
 $grpServer.Controls.Add($btnStop)
 
 $btnRestart = New-Object Windows.Forms.Button
 $btnRestart.Text = "Restart"
 $btnRestart.Location = New-Object Drawing.Point(165, 60)
 $btnRestart.Size = New-Object Drawing.Size(80, 25)
-$btnRestart.Add_Click({ Start-Process (Join-Path $scriptsPath "restart.bat") -WorkingDirectory $scriptsPath -WindowStyle Hidden })
+$btnRestart.Add_Click({ Start-Process (Join-Path $scriptsPath "restart.bat") -WorkingDirectory $scriptsPath -WindowStyle Hidden -CreateNoWindow })
 $grpServer.Controls.Add($btnRestart)
 
 # GroupBox Quick Access
