@@ -22,6 +22,7 @@ This package provides the structure and control scripts for your local MyESMP st
 1. Go to `C:\myesmp\scripts\`.
 2. Double-click **`LaunchControlPanel.bat`** to open the GUI.
 3. Click **Start** to run Apache and MySQL.
+   - **Note:** On the very first run, MySQL will automatically initialize its data folder. This may take a few seconds before it shows as "RUNNING".
 
 ## Important Note
 This setup assumes the root folder is **`C:\myesmp\`**. If you move the folder, you will need to update the paths in the following files:
