@@ -9,25 +9,13 @@ if not exist "C:\myesmp\mysql\bin\mysqld.exe" (
     exit /b 1
 )
 
-:: Check and create data folder
-if not exist "C:\myesmp\mysql\data" (
-    echo Creating missing C:\myesmp\mysql\data directory...
-    mkdir "C:\myesmp\mysql\data"
+:: Check for common corruption errors
+echo Checking for data corruption...
+if exist "C:\myesmp\mysql\data\ib_redo_log" (
+    echo [INFO] Found redo log. If MySQL fails, use reset_mysql.bat
 )
 
-:: Test initialization
-if not exist "C:\myesmp\mysql\data\mysql" (
-    echo Database not initialized. Attempting initialization...
-    "C:\myesmp\mysql\bin\mysqld.exe" --defaults-file="C:\myesmp\mysql\my.ini" --initialize-insecure --console
-    if %ERRORLEVEL% neq 0 (
-        echo ERROR: MySQL initialization failed! See errors above.
-        pause
-        exit /b %ERRORLEVEL%
-    )
-    echo MySQL initialized successfully.
-)
-
-:: Final test startup
+:: Start diagnostic startup
 echo Starting MySQL in console mode...
 echo ------------------------------------------
 "C:\myesmp\mysql\bin\mysqld.exe" --defaults-file="C:\myesmp\mysql\my.ini" --console
