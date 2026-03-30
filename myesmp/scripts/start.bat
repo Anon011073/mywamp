@@ -7,9 +7,9 @@ if not exist "C:\myesmp\mysql\data" mkdir "C:\myesmp\mysql\data"
 :: Initialize MySQL if data folder is empty
 if not exist "C:\myesmp\mysql\data\mysql" (
     echo Initializing MySQL database...
-    "C:\myesmp\mysql\bin\mysqld.exe" --defaults-file="C:\myesmp\mysql\my.ini" --initialize-insecure --console
+    "C:\myesmp\mysql\bin\mysqld.exe" --defaults-file="C:\myesmp\mysql\my.ini" --initialize-insecure
     if %ERRORLEVEL% neq 0 (
-        echo MySQL initialization FAILED. See errors above.
+        echo MySQL initialization FAILED. See mysql_error.log for details.
         pause
         exit /b %ERRORLEVEL%
     )
@@ -19,7 +19,7 @@ if not exist "C:\myesmp\mysql\data\mysql" (
 
 :: Start MySQL
 echo Starting MySQL...
-start "MySQL Server" /B "C:\myesmp\mysql\bin\mysqld.exe" --defaults-file="C:\myesmp\mysql\my.ini" --console
+start "MySQL Server" /B "C:\myesmp\mysql\bin\mysqld.exe" --defaults-file="C:\myesmp\mysql\my.ini"
 
 :: Start Apache
 echo Starting Apache...
