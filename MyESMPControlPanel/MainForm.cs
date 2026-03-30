@@ -92,6 +92,11 @@ public partial class MainForm : Form
         }
     }
 
+    private void btnShell_Click(object sender, EventArgs e)
+    {
+        ExecuteScript("shell.bat");
+    }
+
     private void statusTimer_Tick(object sender, EventArgs e)
     {
         UpdateStatus();

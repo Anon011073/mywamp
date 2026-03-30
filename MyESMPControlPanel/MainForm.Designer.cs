@@ -26,6 +26,7 @@ partial class MainForm
         this.btnLocalhost = new System.Windows.Forms.Button();
         this.btnPMA = new System.Windows.Forms.Button();
         this.btnWWW = new System.Windows.Forms.Button();
+        this.btnShell = new System.Windows.Forms.Button();
         this.statusTimer = new System.Windows.Forms.Timer(this.components);
         this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
         this.trayMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -137,11 +138,22 @@ partial class MainForm
         //
         this.btnWWW.Location = new System.Drawing.Point(15, 83);
         this.btnWWW.Name = "btnWWW";
-        this.btnWWW.Size = new System.Drawing.Size(237, 23);
+        this.btnWWW.Size = new System.Drawing.Size(115, 23);
         this.btnWWW.TabIndex = 8;
         this.btnWWW.Text = "WWW Folder";
         this.btnWWW.UseVisualStyleBackColor = true;
         this.btnWWW.Click += new System.EventHandler(this.btnWWW_Click);
+
+        //
+        // btnShell
+        //
+        this.btnShell.Location = new System.Drawing.Point(137, 83);
+        this.btnShell.Name = "btnShell";
+        this.btnShell.Size = new System.Drawing.Size(115, 23);
+        this.btnShell.TabIndex = 10;
+        this.btnShell.Text = "Terminal (Shell)";
+        this.btnShell.UseVisualStyleBackColor = true;
+        this.btnShell.Click += new System.EventHandler(this.btnShell_Click);
 
         //
         // grpQuickAccess
@@ -149,6 +161,7 @@ partial class MainForm
         this.grpQuickAccess.Controls.Add(this.btnLocalhost);
         this.grpQuickAccess.Controls.Add(this.btnPMA);
         this.grpQuickAccess.Controls.Add(this.btnWWW);
+        this.grpQuickAccess.Controls.Add(this.btnShell);
         this.grpQuickAccess.Location = new System.Drawing.Point(12, 118);
         this.grpQuickAccess.Name = "grpQuickAccess";
         this.grpQuickAccess.Size = new System.Drawing.Size(268, 120);
@@ -246,6 +259,7 @@ partial class MainForm
     private System.Windows.Forms.Button btnLocalhost;
     private System.Windows.Forms.Button btnPMA;
     private System.Windows.Forms.Button btnWWW;
+    private System.Windows.Forms.Button btnShell;
     private System.Windows.Forms.Timer statusTimer;
     private System.Windows.Forms.NotifyIcon notifyIcon;
     private System.Windows.Forms.ContextMenuStrip trayMenu;

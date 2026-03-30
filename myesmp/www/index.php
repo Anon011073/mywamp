@@ -44,6 +44,9 @@
             <a href="/phpmyadmin" class="btn">phpMyAdmin</a>
             <a href="?info=1" class="btn btn-secondary">PHP Info</a>
         </div>
+        <p style="font-size: 14px; color: #666; margin-top: 15px;">
+            <strong>CLI Access:</strong> To use <code>composer</code>, <code>npm</code>, or <code>mysql</code>, click the <strong>Terminal (Shell)</strong> button in the MyESMP Control Panel.
+        </p>
     </div>
 
     <?php

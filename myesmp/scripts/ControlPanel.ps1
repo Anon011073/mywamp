@@ -102,9 +102,16 @@ $grpQuick.Controls.Add($btnPMA)
 $btnWWW = New-Object Windows.Forms.Button
 $btnWWW.Text = "WWW Folder"
 $btnWWW.Location = New-Object Drawing.Point(15, 85)
-$btnWWW.Size = New-Object Drawing.Size(230, 25)
+$btnWWW.Size = New-Object Drawing.Size(110, 25)
 $btnWWW.Add_Click({ if (Test-Path $wwwPath) { Start-Process "explorer.exe" $wwwPath } })
 $grpQuick.Controls.Add($btnWWW)
+
+$btnShell = New-Object Windows.Forms.Button
+$btnShell.Text = "Terminal (Shell)"
+$btnShell.Location = New-Object Drawing.Point(135, 85)
+$btnShell.Size = New-Object Drawing.Size(110, 25)
+$btnShell.Add_Click({ Start-Process "cmd.exe" -ArgumentList "/c shell.bat" -WorkingDirectory $scriptsPath })
+$grpQuick.Controls.Add($btnShell)
 
 # Status Monitoring Timer
 $timer = New-Object Windows.Forms.Timer
